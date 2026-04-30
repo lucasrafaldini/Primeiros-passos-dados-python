@@ -16,7 +16,7 @@ def count_most_common_genres(dataframe):
     print(count)
 
 def rating_mean(dataframe):
-    media_rating = dataframe['rating'].mean()
+    media_rating = dataframe['averageRating'].mean()
     print(f"Média de Avaliações (Rating) Geral: {media_rating}")
     # f string é uma string que interpola textos com valores de variáveis
     # O que está entre chaves {media_rating} significa um valor de uma variável, ou seja, não fixado
@@ -44,7 +44,7 @@ def crossing_best_worst_movies_by_year(best_dataframe, worst_dataframe):
     print(analise_cruzada)
 
 # Defina a função que será seu entrypoint
-def main(best_filename="1000-best-movies-imdb.csv", worst_filename="1000-worst-movies-imdb.csv"):
+def main(best_filename="movies/1000-best-movies-imdb.csv", worst_filename="movies/1000-worst-movies-imdb.csv"):
     #Execute o método read_csv do pandas com o parâmetro definido anteriormente
     best_data=pd.read_csv(best_filename)
     # Chame aqui a contagem dos gêneros mais comuns da lista
@@ -58,7 +58,7 @@ def main(best_filename="1000-best-movies-imdb.csv", worst_filename="1000-worst-m
 
 # Utilize o dunder name para se assegurar que o arquivo está sendo executado como entrypoint
 # Caso ele esteja sendo executado como entrypoint, o ponto de partida é a função main
-if __name__ = "__main__":
+if __name__ == "__main__":
     # Defina uma variável com o nome do arquivo que será importado
     # csv_filename = "data.csv"
     main()
